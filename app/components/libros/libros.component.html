@@ -1,0 +1,39 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="h3">Lista de Libros</span>
+        <button class="btn btn-dark btn-lg" routerLink="/crear">Agregar</button>
+      </div>
+      <table class="table table-striped mt-5">
+        <thead>
+          <tr>
+            <th scope="col">Autor</th>
+            <th scope="col">Libro</th>
+            <th scope="col">Año de Publicacion</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          @for (item of libros; track item) {
+            <tr>
+              <td>{{item.autor}}</td>
+              <td>{{item.libro}}</td>
+              <td>{{item.year}}</td>
+            <td><img [src]="item.imagen" alt="Imagen de libro" width="100"></td>
+              <button type="button" class="btn btn-primary" [routerLink]="['/editar', item.id]">Editar</button>
+              <button type="button" class="btn btn-danger" (click)="deleteLibro(item.id)">Eliminar</button>
+            </tr>
+          }
+
+        </tbody>
+      </table>
+      <ul>
+
+
+      </ul>
+    </div>
+  </div>
+</div>
+

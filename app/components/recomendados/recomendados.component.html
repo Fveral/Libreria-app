@@ -1,0 +1,34 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="h3">Libros Recomendados</span>
+      </div>
+      <table class="table table-striped mt-5">
+        <thead>
+          <tr>
+            <th scope="col">Autor</th>
+            <th scope="col">Libro</th>
+            <th scope="col">Año de Publicacion</th>
+            <th scope="col">Imagen</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          @for (item of librosR; track item) {
+            <tr>
+              <td>{{item.autor}}</td>
+              <td>{{item.libro}}</td>
+              <td>{{item.year}}</td>
+            <td><img [src]="item.imagen" alt="Imagen de libro" width="100"></td>
+            </tr>
+          }
+
+        </tbody>
+      </table>
+      <ul>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
